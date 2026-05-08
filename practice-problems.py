@@ -91,6 +91,7 @@ This program will predict the color of the traffic light for a time T
 2. if T is between 31 and 45 then yellow
 3. if T is between 46 and 90 then green
 """
+"""
 def traffic_light_color(T):
     T = T % 90
     if 1 <= T <= 30:
@@ -102,3 +103,66 @@ def traffic_light_color(T):
 time = input()
 color_based_on_time = traffic_light_color(int(time))
 print(color_based_on_time)
+"""
+
+#Program-5: Employee Salary Calculator
+"""
+This program calculates the final salary after applying deductions based on:
+1. Late days > 5 → deduct 5%
+2. Late days > 10 → deduct 10%
+3. Absent days > 2 → deduct additional 5%
+"""
+
+"""
+def calculate_final_salary(salary, late_days, absent_days):
+    deduction = 0
+    if late_days > 5 and late_days < 10:
+        deduction += 0.05
+    if late_days > 10:
+        deduction += 0.10
+    if absent_days > 2:
+        deduction += 0.05
+
+    final_salary = salary * (1 - deduction)
+    return int(final_salary)
+
+salary = int(input())
+late_days = int(input())
+absent_days = int(input())
+
+final_salary = calculate_final_salary(salary, late_days, absent_days)
+print(final_salary)
+"""
+
+#Program-6: Prime Range Analyzer
+"""
+This program takes a range of numbers and counts how many numbers in that range are prime.
+"""
+
+"""
+import math
+def is_prime(n):
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
+
+def count_primes(a, b):
+    prime_count = 0
+    for num in range(a, b + 1):
+        if is_prime(num):
+            prime_count += 1
+    return prime_count
+
+A = int(input())
+B = int(input())
+
+result = count_primes(A, B)
+print(result)
+"""
