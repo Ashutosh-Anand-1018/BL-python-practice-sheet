@@ -166,3 +166,46 @@ B = int(input())
 result = count_primes(A, B)
 print(result)
 """
+
+#Program-7: Online order discount engine
+"""
+This program calculates the final price of an order after applying discounts based on the order price:
+1. If order price is greater than or equal to 5000, apply a 20% discount.
+2. If order price is greater than or equal to 3000 but less than 5000, apply a 10% discount.
+3. If order price is greater than or equal to 1000 but less than 3000, apply a 5% discount.
+"""
+
+"""
+def decide_discount(order_price):
+    discount = 0
+    if order_price >= 5000:
+        discount += 0.2
+    elif order_price >= 3000:
+        discount += 0.1
+    elif order_price >= 1000:
+        discount += 0.05
+    return order_price - (order_price * discount)
+
+order_amount = int(input())
+final_price = decide_discount(order_amount)
+print(final_price)
+"""
+
+#Program-8: Binary to Decimal Converter
+"""
+This program converts a binary number to its decimal equivalent without using built-in functions.
+"""
+
+"""
+def binary_to_decimal(binary_str):
+    decimal = 0
+    power = 0
+    for digit in binary_str[::-1]:
+        decimal += int(digit) * (2 ** power)
+        power += 1
+    return decimal
+binary_number = input()
+
+decimal_result = binary_to_decimal(binary_number)
+print(decimal_result)
+"""
