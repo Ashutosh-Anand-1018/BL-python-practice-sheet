@@ -1,3 +1,4 @@
+"""
 #Program-1: ATM transaction validator
 def validate_transaction(balance, amount):
     # Check if amount is multiple of 100
@@ -28,3 +29,22 @@ for amount in amounts_list:
     result, balance = validate_transaction(balance, amount)
     print(result)
 print(balance)
+"""
+
+#Program-2: Smart Electicity Billing system
+
+#Function to calculate the bill based on units consumed, uses a simple subtraction logic to determine the cost based on the slabs. 
+#It also adds a surcharge of 10% if the units consumed exceed 200.
+def calculate_bill(units):
+    surcharge = 0.10
+    if units <= 100:
+        return units * 3
+    elif units <= 200:
+        return (100 * 3) + ((units - 100) * 5)
+    else:
+        return (100 * 3) + (100 * 5) + ((units - 200) * 8) + surcharge * ((100 * 3) + (100 * 5) + ((units - 200) * 8))
+
+# Read the number of units consumed and calculate the total bill
+units_consumed = int(input())
+total_bill = calculate_bill(units_consumed)
+print(total_bill)
