@@ -209,3 +209,44 @@ binary_number = input()
 decimal_result = binary_to_decimal(binary_number)
 print(decimal_result)
 """
+
+#Program-9: Mobile Battery drain simulator
+"""
+This program calculates the time till which the battery will survive based on the drain per minute rate
+"""
+
+"""
+def calculate_battery_life(battery_capacity, drain_rate):
+    minutes = 0
+    while battery_capacity > 0:
+        battery_capacity -= drain_rate
+        minutes += 1
+    return minutes
+
+capacity = 100
+drain_per_minute = int(input())
+battery_life = calculate_battery_life(capacity, drain_per_minute)
+print(battery_life)
+"""
+
+#Program-10: Exam Result processor
+"""
+This program processes the marks of a student and determines if they have passed or failed based on:
+1. If any of 5 subject marks is less than 35, the student fails.
+2. If the average of the marks is more than 75, the student gets a distinction.
+3. Otherwise, the student passes.
+"""
+
+def process_exam_result(mark1, mark2, mark3, mark4, mark5):
+    marks = [mark1, mark2, mark3, mark4, mark5]
+    for mark in marks:
+        if mark < 35:
+            return "FAILED"
+    average = sum(marks) / 5
+    if average > 75:
+        return "DISTINCTION"
+    return "PASSED"
+marks = input()
+mark1, mark2, mark3, mark4, mark5 = map(int, marks.split())
+result = process_exam_result(mark1, mark2, mark3, mark4, mark5)
+print(result)
