@@ -237,6 +237,7 @@ This program processes the marks of a student and determines if they have passed
 3. Otherwise, the student passes.
 """
 
+"""
 def process_exam_result(mark1, mark2, mark3, mark4, mark5):
     marks = [mark1, mark2, mark3, mark4, mark5]
     for mark in marks:
@@ -249,4 +250,68 @@ def process_exam_result(mark1, mark2, mark3, mark4, mark5):
 marks = input()
 mark1, mark2, mark3, mark4, mark5 = map(int, marks.split())
 result = process_exam_result(mark1, mark2, mark3, mark4, mark5)
+print(result)
+"""
+
+#Program-11: Number compression counter
+"""
+This program counts number of times a number can be divided by 2 before it becomes an odd number.
+The function uses a while loop to continuously divide the number by 2 until it is no longer even, counting the number of divisions performed.
+"""
+"""
+def count_divisions_by_two(n):
+    count = 0
+    while n % 2 == 0:
+        n //= 2
+        count += 1
+    return count
+number = int(input())
+if number % 2 != 0:
+    print(0)
+else:
+    result = count_divisions_by_two(number)
+    print(result)
+"""
+
+#Program-12: Vowel frequecny counter:
+"""
+def count_vowels(input_string):
+    input_string = input_string.lower()
+    count = 0
+    for i in input_string:
+        if i == 'a' or i == 'e' or i == "i" or i == "o" or i == "u":
+            count += 1
+    return count
+input_string = input()
+vowel_count = count_vowels(input_string)
+print(vowel_count)
+"""
+
+#Program-13: Train ticket fare calculator
+
+"""
+def train_fare_calculator(distance, age):
+    fare = distance * 2
+    if age < 12:
+        fare *= 0.5
+    elif age >= 60:
+        fare *= 0.7
+    return fare
+distance = int(input())
+age = int(input())
+final_fare = train_fare_calculator(distance, age)
+print(final_fare)
+"""
+
+#Program-14: Number pattern validator
+
+def check_strictly_increasing(number):
+    number_str = str(number)
+    for i in range(len(number_str) - 1):
+        if int(number_str[i]) >= int(number_str[i + 1]):
+            return "NO"
+    return "YES"
+
+number = int(input())
+result = check_strictly_increasing(number)
 print(result)
