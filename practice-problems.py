@@ -305,6 +305,7 @@ print(final_fare)
 
 #Program-14: Number pattern validator
 
+"""
 def check_strictly_increasing(number):
     number_str = str(number)
     for i in range(len(number_str) - 1):
@@ -315,3 +316,128 @@ def check_strictly_increasing(number):
 number = int(input())
 result = check_strictly_increasing(number)
 print(result)
+"""
+
+#Program-15: Smart door lock system
+
+"""
+def smart_lock_system(code, input_code):
+    if code == input_code: 
+        return "ACCESS GRANTED"
+    else:
+        return
+code = input()
+counter = 3
+while counter > 0:
+    input_code = input()
+    result = smart_lock_system(code, input_code)
+    if result == "ACCESS GRANTED":
+        print(result)
+        break
+    else:
+        counter -= 1
+        if counter == 0:
+            print("ACCESS DENIED")
+"""
+
+#Program-16: Water tank flow detector
+
+"""
+def detect_tank_overflow(inflows):
+    tank_capacity = 1000
+    current_volume = 0
+    for minute, inflow in enumerate(inflows, 1):
+        current_volume += inflow
+        if current_volume > tank_capacity:
+            return minute
+    return -1
+
+n = int(input())
+inflows = list(map(int, input().split()))
+overflow_minute = detect_tank_overflow(inflows)
+print(overflow_minute)
+"""
+
+#Program-17: Armstrong number checker
+
+"""
+def is_armstrong_number(num):
+    original_num = num
+    counter = 0
+    armstrong_sum = 0
+    while counter < 3:
+        digit = num % 10
+        armstrong_sum += digit ** 3
+        num //= 10
+        counter += 1
+    if armstrong_sum == original_num:
+        return "YES"
+    else:
+        return "NO"
+number = int(input())
+result = is_armstrong_number(number)
+print(result)
+"""
+
+#Program-18: Bus seat allocator
+
+"""
+def validate_transaction(balance, amount):
+    if amount > balance:
+        return "WAITLISTED", balance
+    else:
+        balance -= amount
+        return "CONFIRMED", balance
+
+initial_balance = 40
+no_of_transactions = int(input())
+balance = initial_balance
+
+amounts_list = []
+
+for i in range(no_of_transactions):
+    amount = int(input())
+    amounts_list.append(amount)
+
+for amount in amounts_list:
+    result, balance = validate_transaction(balance, amount)
+    print(result)
+"""
+
+#Program-19: Number Mirror Validator
+
+"""
+def is_palindrome(number):
+    original = number
+    reversed_num = 0
+    while number > 0:
+        digit = number % 10
+        reversed_num = reversed_num * 10 + digit
+        number //= 10
+    if original == reversed_num:
+        return "PALINDROME"
+    else:
+        return "NOT PALINDROME"
+
+number = int(input())
+result = is_palindrome(number)
+print(result)
+"""
+
+#Program-20: Digital Lock Countdown
+
+#"""
+def digital_lock_countdown(number):
+    while number >= 10:
+        digit_sum = 0
+        while number > 0:
+            digit = number % 10
+            digit_sum += digit
+            number //= 10
+        number = digit_sum
+    return number
+
+number = int(input())
+result = digital_lock_countdown(number)
+print(result)
+#"""
